@@ -7,7 +7,7 @@ services:
       - "5432:5432"
     environment:
       - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=pass 
+      - POSTGRES_PASSWORD=docker 
       - POSTGRES_DB=airbnb
 
 
@@ -17,7 +17,7 @@ services:
     ports:
       - "5000:5000"
     environment:
-      - POSTGRES_CONNECTION_STRING=postgresql://postgres:docker@127.0.0.1:5432/airbnb
+      - POSTGRES_CONNECTION_STRING=postgresql://postgres:docker@database:5432/airbnb
       - NODE_ENV=production                     
     depends_on:
       - database

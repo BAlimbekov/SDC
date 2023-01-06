@@ -1,12 +1,13 @@
 const express = require("express");
 const cors = require("cors");
 const { Client } = require("pg");
-const PORT = 5000;
+// const PORT = 5000;
 
-const connectionString = "postgresql://postgres:docker@127.0.0.1:5432/airbnb";
-// const config = require("./config.js")[process.env.NODE_ENV || "dev"];
-// const PORT = config.port;
-const client = new Client({ connectionString: connectionString });
+// const connectionString = "postgresql://postgres:docker@127.0.0.1:5432/airbnb";
+// const connectionString = "postgresql://postgres:docker@127.0.0.1:5432/airbnb";
+const config = require("./config.js")[process.env.NODE_ENV || "dev"];
+const PORT = config.port;
+const client = new Client({ connectionString: config.connectionString });
 client.connect();
 
 const app = express();
