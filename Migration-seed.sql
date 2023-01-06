@@ -1,9 +1,9 @@
 DROP TABLE IF EXISTS USERS;
-DROP TABLE IF EXISTS REVIEW;
+DROP TABLE IF EXISTS REVIEWS;
 
 CREATE TABLE USERS (
     id serial Primary Key,
-    Name varchar(50)
+    name varchar(50)
 );
 
 CREATE TABLE REVIEWS (
@@ -51,24 +51,24 @@ INSERT INTO REVIEWS (user_id, comment, cleanliness, checkin, location, communica
 (22,'A wickedly ambitious king played with a jester.', 3.2, 0.2, 2.5, 1.0, 4.7);
 
 
-UPDATE USERS SET joined='Feburary 2022' WHERE id=2;
-UPDATE USERS SET joined='March 2022' WHERE id=3;
-UPDATE USERS SET joined='April 2022' WHERE id=4;
-UPDATE USERS SET joined='May 2022' WHERE id=5;
-UPDATE USERS SET joined='June 2022' WHERE id=6;
-UPDATE USERS SET joined='July 2022' WHERE id=7;
-UPDATE USERS SET joined='January 2019' WHERE id=8;
-UPDATE USERS SET joined='August 2022' WHERE id=9;
-UPDATE USERS SET joined='September 2022' WHERE id=10;
-UPDATE USERS SET joined='October 2022' WHERE id=11;
-UPDATE USERS SET joined='November 2022' WHERE id=12;
-UPDATE USERS SET joined='December 2022' WHERE id=13;
-UPDATE USERS SET joined='January 2021' WHERE id=14;
-UPDATE USERS SET joined='Feburary 2021' WHERE id=15;
-UPDATE USERS SET joined='March 2021' WHERE id=16;
-UPDATE USERS SET joined='April 2021' WHERE id=17;
-UPDATE USERS SET joined='May 2021' WHERE id=18;
-UPDATE USERS SET joined='June 2021' WHERE id=19;
-UPDATE USERS SET joined='July 2021' WHERE id=20;
-UPDATE USERS SET joined='August 2021' WHERE id=21;
-UPDATE USERS SET joined='September 2021' WHERE id=22;
+-- UPDATE USERS SET orgJoined ='Feburary 2022' WHERE id=2;
+-- UPDATE USERS SET orgJoined ='March 2022' WHERE id=3;
+-- UPDATE USERS SET orgJoined ='April 2022' WHERE id=4;
+-- UPDATE USERS SET orgJoined ='May 2022' WHERE id=5;
+-- UPDATE USERS SET orgJoined ='June 2022' WHERE id=6;
+-- UPDATE USERS SET orgJoined ='July 2022' WHERE id=7;
+-- UPDATE USERS SET orgJoined ='January 2019' WHERE id=8;
+-- UPDATE USERS SET orgJoined ='August 2022' WHERE id=9;
+-- UPDATE USERS SET orgJoined ='September 2022' WHERE id=10;
+-- UPDATE USERS SET orgJoined ='October 2022' WHERE id=11;
+-- UPDATE USERS SET orgJoined ='November 2022' WHERE id=12;
+-- UPDATE USERS SET orgJoined ='December 2022' WHERE id=13;
+-- UPDATE USERS SET orgJoined ='January 2021' WHERE id=14;
+-- UPDATE USERS SET orgJoined ='Feburary 2021' WHERE id=15;
+-- UPDATE USERS SET orgJoined ='March 2021' WHERE id=16;
+-- UPDATE USERS SET orgJoined ='April 2021' WHERE id=17;
+-- UPDATE USERS SET orgJoined ='May 2021' WHERE id=18;
+-- UPDATE USERS SET orgJoined ='June 2021' WHERE id=19;
+-- UPDATE USERS SET orgJoined ='July 2021' WHERE id=20;
+-- UPDATE USERS SET orgJoined ='August 2021' WHERE id=21;
+-- UPDATE USERS SET orgJoined ='September 2021' WHERE id=22;
