@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const { Client } = require("pg");
-// const PORT = 5000;
+// const PORT = 5174;
 
 // const connectionString = "postgresql://postgres:docker@127.0.0.1:5432/airbnb";
 // const connectionString = "postgresql://postgres:docker@127.0.0.1:5432/airbnb";
