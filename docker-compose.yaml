@@ -15,6 +15,17 @@ services:
       - ./postgres-data:/var/lib/postgresql/data
 
 
+  # PostgreSQL pgAdmin panel accessible at http://localhost:16543/
+  pgadmin-compose:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "Team3@gmail.com"
+      PGADMIN_DEFAULT_PASSWORD: "admin"
+    ports:
+      - "16543:80"
+    depends_on:
+      - database
+
   api:
     build: ./Server
     restart: always
