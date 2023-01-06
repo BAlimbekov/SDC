@@ -3,7 +3,8 @@ DROP TABLE IF EXISTS REVIEWS;
 
 CREATE TABLE USERS (
     id serial Primary Key,
-    name varchar(50)
+    name varchar(50),
+    orgJoined text
 );
 
 CREATE TABLE REVIEWS (
@@ -15,7 +16,6 @@ CREATE TABLE REVIEWS (
     location SmallInt,
     communication SmallInt,
     accuracy SmallInt,
-    orgJoined text,
     FOREIGN KEY(user_id) REFERENCES USERS(id) ON DELETE CASCADE
 );
 
@@ -73,3 +73,21 @@ UPDATE USERS SET orgJoined ='June 2021' WHERE id=19;
 UPDATE USERS SET orgJoined ='July 2021' WHERE id=20;
 UPDATE USERS SET orgJoined ='August 2021' WHERE id=21;
 UPDATE USERS SET orgJoined ='September 2021' WHERE id=22;
+
+
+DROP TABLE IF EXISTS RESERVATIONS;
+
+CREATE TABLE RESERVATIONS (
+    id serial Primary Key,
+    adults Int,
+    children Int,
+    infants Int,
+    pets Int,
+    checkIn text,
+    checkOut text,
+    numberOfNights Int,
+    nightlyRate Int
+);
+
+INSERT INTO RESERVATIONS (adults, children, infants, pets, checkIn, checkOut, numberOfNights, nightlyRate) VALUES 
+(1, 1, 0, 0, '01/15/2023', '01/21/2023', 2, 1000);

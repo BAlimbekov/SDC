@@ -129,8 +129,8 @@ function Reservation(props) {
 
   const getCustomersData = () => {
     axios
-      .get("https://backendbnb.onrender.com/api/reservations/")
-      // .get("http://localhost:5000/api/reservations/")
+      //.get("https://backendbnb.onrender.com/api/reservations/")
+       .get("http://localhost:5174/api/reservations/")
       .then((data) => {
         const fetchData = data.data;
         setReservationData(fetchData);
@@ -141,8 +141,8 @@ function Reservation(props) {
 
   const putCustomerData = (reservation) => {
     axios
-      .post("https://backendbnb.onrender.com/api/reservations/", reservation)
-      // .post("http://localhost:5000/api/reservations/", reservation)
+      //.post("https://backendbnb.onrender.com/api/reservations/", reservation)
+      .post("http://localhost:5174/api/reservations/", reservation)
       .then((res) => console.log(res))
       .catch((error) => console.log(error));
   };

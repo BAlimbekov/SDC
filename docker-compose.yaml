@@ -9,6 +9,10 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=docker 
       - POSTGRES_DB=airbnb
+    volumes:
+      # copy the sql script to create tables
+      - ./database-seed.sql:/docker-entrypoint-initdb.d/database-seed.sql
+      - ./postgres-data:/var/lib/postgresql/data
 
 
   api:
@@ -28,3 +32,6 @@ services:
       - "5173:5173"
     depends_on:
       - api
+
+volumes:
+  postgres-data:

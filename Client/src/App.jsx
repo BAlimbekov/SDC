@@ -25,7 +25,9 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    axios.get("/api/reviews").then((res) => {
+    
+    //axios.get("/api/reviews").then((res) => {
+      axios.get("http://localhost:5174/api/reviews/").then((res) => {
       setPageData(res.data);
       setIsLoading(false);
     });
