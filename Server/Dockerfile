@@ -12,8 +12,8 @@ RUN npm install
 
 COPY . .
 
-ENV PORT 5000
+ENV PORT 5174
 
-EXPOSE 5000
+EXPOSE 5174
 
 CMD ["node", "Server.js"]
