@@ -17,13 +17,15 @@ import SaveButton from "./Components/Save";
 import Titlerow from "./Components/Info1";
 import "./App.css";
 import { Router } from "react-router";
+import CommentWindow from './Components/commentWindow'
+
 
 function App() {
   const [pageData, setPageData] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    axios.get("https://backendbnb.onrender.com/api/reviews").then((res) => {
+    axios.get("/api/reviews").then((res) => {
       setPageData(res.data);
       setIsLoading(false);
     });
@@ -55,7 +57,10 @@ function App() {
             <Review_Comment_Container {...propsObj} />
           )}
         </div>
-      </div>
+        {/* <div className="scrollingComments">
+        <CommentWindow />
+        </div> */}
+     </div>
 
       <footer>
         <Other_Options />

@@ -1,20 +1,24 @@
 const express = require("express");
 const cors = require("cors");
 const { Client } = require("pg");
+const PORT = 5000;
 
-const config = require("./config.js")[process.env.NODE_ENV || "dev"];
-const PORT = config.port;
-const client = new Client({ connectionString: config.connectionString });
+const connectionString = "postgresql://postgres:docker@127.0.0.1:5432/airbnb";
+// const config = require("./config.js")[process.env.NODE_ENV || "dev"];
+// const PORT = config.port;
+const client = new Client({ connectionString: connectionString });
 client.connect();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
+
 //Routes
-app.get("/", (req, res) => {
+app.get("/api", (req, res) => {
   res.status(200).send("Hello World!");
 });
+
 
 app.get("/api/", (req, res) => {
   async function fromAll() {
@@ -37,21 +41,20 @@ app.get("/api/reviews", (req, res) => {
       client.query(`SELECT 
       reviews."id",
       users."name",
-      users."joined",
       reviews."comment",
-      reviews."Location",
-      reviews."Communication",
-      reviews."Cleanliness",
-      reviews."Check-in",
-      reviews."Accuracy"
+      reviews."location",
+      reviews."communication",
+      reviews."cleanliness",
+      reviews."checkin",
+      reviews."accuracy"
       FROM reviews 
       INNER JOIN 
       users on users.id = reviews.user_id;`)
       .then(result =>{
         res.status(200).send(result.rows)
       })
-
-    } catch (error) {
+    }
+      catch (error) {
       res.status(404).send("Page Not Found");
     }
   }

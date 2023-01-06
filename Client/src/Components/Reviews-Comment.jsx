@@ -3,6 +3,7 @@ import Comment from "./Comment"
 
 const Reviews_Comments = (props) =>{
     let raters = props.pageData.slice(-6);
+    console.log(props.pageData);
     return (
         <div className="profile-section-container">
         {raters.map((obj) => {

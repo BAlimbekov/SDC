@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+
+  database:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=pass 
+      - POSTGRES_DB=airbnb
+
+
+  api:
+    build: ./Server
+    restart: always
+    ports:
+      - "5000:5000"
+    environment:
+      - POSTGRES_CONNECTION_STRING=postgresql://postgres:docker@127.0.0.1:5432/airbnb
+      - NODE_ENV=production                     
+    depends_on:
+      - database
+
+  frontend:
+    build: ./Client
+    ports:
+      - "5173:5173"
+    depends_on:
+      - api
