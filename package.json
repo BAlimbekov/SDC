@@ -1,7 +1,9 @@
 {
   "dependencies": {
     "bootstrap": "^5.2.3",
+    "faker": "^5.5.3",
     "force": "^0.0.3",
+    "fs": "0.0.1-security",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.0"
   }
