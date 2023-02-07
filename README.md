@@ -79,3 +79,4 @@ If you receive an "EOF" message, repeatedly refresh page to wake Render server
 ## _Collaborators_
 
 - Gabriel Hribik - [@ghribik](https://github.com/ghribik)
+- Bekmambet Alimbekov - [@BAlimbekov](https://github.com/BAlimbekov)
